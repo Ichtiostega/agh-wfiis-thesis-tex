@@ -1,0 +1,54 @@
+\section{Klasteryzacja K-means}
+\subsection{Klasteryzacja}
+\paragraph{}
+Klasteryzacją nazywany jest proces łączenia danych w zestawy tak żeby punkty wewnątrz klastra były jak najbardziej do siebie zbliżone względem wybranego zestawu cech natomiast punkty należące do różnych klastrów mają się od siebie jak najbardziej różnić. Metoda ta jest używana do analizy struktury danych w celu wyodrębnienia danej ilości grup.
+\subsection{K-means}
+\paragraph{}
+Metoda k-means jest uważana za najbardziej powszechnie używaną przy klasteryzacji do czego przyczynia się niski stopień skomplikowania. K-means należy do algorytmów maksymalizacji oczekiwań, to jest algorytmów które składają się z dwóch części: oczekiwań (oznaczone poniżej jako O) i maksymalizacji (oznaczone jako M). Algorytm metody wygląda w sposób następujący:
+\begin{enumerate}
+	\item Ustalenie ilości szukanych klastrów
+	\item Losowa inicjalizacja centroidów
+	\item Powtarzane aż klastry przestaną się zmieniać:
+	\begin{enumerate}
+		\item Przypisanie każdego punktu do klastra którego centroid znajduje się najbliżej niego [O]\\
+		\begin{equation}
+			l^{(i)} := \arg \underset{j}{\min} \left \| x^{(i)} - c_{j} \right \|^{2}
+		\end{equation}
+		\item Ustawienie każdego centroidu w punkcie centralnym względem wszystkich punktów jego klastra [M]\\
+		\begin{equation}
+			c_{j} := \frac{\sum_{i=1}^{m}1\left \{ l^{(i)}=j \right \}x^{(i)}}{\sum_{i=1}^{m}1\left \{ l^{(i)}=j \right \}}
+		\end{equation}
+	\end{enumerate}
+\end{enumerate}
+\section{Indeks Calinskiego-Harabasza}
+\paragraph{}
+Przy wykonywaniu klasteryzacji warto móc sprawdzić jaka metoda klasteryzacji z jakimi parametrami daje najlepsze efekty. W tym celu przydatne są rozmaite indeksy, funkcje których celem jest ocena wyniku klasteryzacji. 
+\paragraph{}
+Jednym z takich indeksów jest indeks Calinskiego-Harabasza. Który dokonuje analizy klasteryzacji porównując podobieństwa między punktami z tego samego klastra do podobieństw między klastrami. Im większe podobieństwo punktów w klastrze i mniejsze podobieństwo między klastrami tym ocena wyniku jest wyższa. Funkcja opisująca indeks jest następująca:
+\begin{equation}
+	s = \frac{\mathrm{tr}(B_k)}{\mathrm{tr}(W_k)} \times \frac{n_E - k}{k - 1}
+\end{equation}
+\paragraph{}
+Gdzie $\mathrm{tr}(B_k)$ to ślad macierzy kowariancji między klastrami a $\mathrm{tr}(W_k)$ to ślad macierzy kowariancji wewnątrz klastrów. Obie macierze definiowane są następująco:
+\begin{equation}
+	W_k = \sum_{q=1}^k \sum_{x \in C_q} (x - c_q) (x - c_q)^T
+\end{equation}
+\begin{equation}
+	B_k = \sum_{q=1}^k n_q (c_q - c_E) (c_q - c_E)^T
+\end{equation}
+\paragraph{}
+Wartości w równaniach 2.3 do 2.5 oznaczają: $n_E$ - liczebność danych, $k$ - ilość klastrów, $C_q$ - liczebność klastra $q$, $c_q$ - środek klastra $q$, $c_E$ - środek całego zestawu danych, $n_q$ - liczebność klastra $q$.
+\section{Estymator jądrowy gęstości}
+\paragraph{}
+Estymator jądrowy gęstości lub KDE(z ang. Kernel Density Estimator) jest nieparametrycznym estymatorem który w celu wyestymowania rozkładu wartości wykorzystuje funkcję dodatnią $K$ (tzw. Jądro). Jądrem często są takie funkcje jak gęstość rozkładu normalnego, trójkątnego czy tak zwane jądro Epanecznikowa które opisuje wzór:
+\begin{equation}
+	K(x) = \dfrac{3}{4}\left ( 1 - x^2 \right ), gdzie \left | x \right | \leq 1
+\end{equation}
+Natomiast sam estymator jądrowy opisany jest następującym wzorem:
+\begin{equation}
+	\hat{f}(x) = \dfrac{1}{mh^n}\sum_{i=1}^{m} K\left ( \dfrac{x - x_i}{h}  \right )
+\end{equation}
+\paragraph{}
+W powyższym równaniu $h$ jest parametrem wygładzania i ma wpływ na to jak znaczącą rolę w wyestymowaniu rozkładu w danym punkcie mają punkty znajdujące się w okół niego. Im jego wartość jest większa tym większe jest wygładzenie wynikowego rozkładu.
+\paragraph{}
+KDE sprawdza się świetnie gdy chcemy dużą ilość skumulowanych danych zwizualizować tak żeby móc wskazać duże nagromadzenia podobnych wartości.

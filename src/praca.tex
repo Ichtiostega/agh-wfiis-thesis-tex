@@ -1,14 +1,13 @@
-% TODO: Można zmienić na angielski wybierając drugą linię
+% Można zmienić na angielski wybierając drugą linię
 \documentclass[11pt]{aghdpl}
 % \documentclass[en,11pt]{aghdpl}
 
-% TODO:
 % Lista wszystkich języków stanowiących języki pozycji bibliograficznych użytych w pracy.
 % (Zgodnie z zasadami tworzenia bibliografii każda pozycja powinna zostać utworzona zgodnie z zasadami języka, w którym dana publikacja została napisana.)
 \usepackage[english,polish]{babel}
 
 % Użyj polskiego łamania wyrazów (zamiast domyślnego angielskiego).
-% TODO: Można zmienić na angielski
+% Można zmienić na angielski
 \usepackage{polski}
 
 \usepackage[utf8]{inputenc}
@@ -22,7 +21,7 @@
 
 
 % Paczka wyłącza pokazywanie numeru strony oraz nagłówków na pustych stronach
-% TODO: Można wyłączyć
+% Można wyłączyć
 \usepackage{emptypage}
 
 % Dodatkowe kolory:
@@ -44,7 +43,7 @@
 \usepackage{siunitx}
 
 % Ustawienia marginesów kolumn w array
-% TODO: Można usunąć/zmodyfikować
+% Można usunąć/zmodyfikować
 \usepackage{array}
 \newcolumntype{0}{>{\centering\arraybackslash}m{0.5cm}}
 \newcolumntype{1}{>{\centering\arraybackslash}m{1cm}}
@@ -111,7 +110,7 @@
 
 % --- < bibliografia > ---
 %
-% TODO: Dla TeXstudio warto przeczytać poniższe!
+% Dla TeXstudio warto przeczytać poniższe!
 % UWAGA: Żeby bibliografia działała gdy używamy TeXstudio, to należy zmodyfikować quick build w opcjach, tak aby wykonywane były polecenia:
 % 	PdfLaTeX
 % 	BibTeX
@@ -194,7 +193,7 @@
 % ------------------------
 % --- < tabele > ---
 
-% TODO: Dodatkowe paczki do tabel, można usunąć
+% Dodatkowe paczki do tabel, można usunąć
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
@@ -208,34 +207,34 @@
 
 %---------------------------------------------------------------------------
 
-% TODO: Poniższe mogą się wyświetlać lub nie w zależności od wariantów wyżej
+% TODO: Poniższe mogą się wyświetlać lub nie w zależności od wariantów wyżej
 % Np. języka lub innej konfiguracji
 % Prawdopodobnie niektóre z poniższych nie są nigdy używane.
 % Jeśli o tym wiesz, to warto rozwinąć ten szablon i udostępnić go dalej ;)
 
-\author{TODO: Author}
-\shortauthor{TODO: Short~author}
+\author{Karol Kocierz}
+\shortauthor{K. Kocierz}
 
-\titlePL{TODO: TitlePL}
-\titleEN{TODO: TitleEN}
+\titlePL{Przewidywanie przestępstw na podstawie danych historycznych i aktualnych}
+% \titleEN{TitleEN}
 
 % Skrócone wersje tytułów po polsku/angielsku
 % wyświetlane np. gdy normalne są bardzo długie
-\shorttitlePL{TODO: Short title PL}
-\shorttitleEN{TODO: Short title EN}
+% \shorttitlePL{Short title PL}
+% \shorttitleEN{Short title EN}
 
 % Rodzaj pracy
-\thesistype{Praca dyplomowa magisterska}
+\thesistype{Praca dyplomowa inżynierska}
 %\thesistype{Master of Science Thesis}
 
 % Promotor/opiekun pracy
-\supervisor{TODO: Promotor}
+\supervisor{Dr. Piotr Kowalski}
 
 % Kierunek studiów
 \degreeprogramme{Informatyka Stosowana}
 
 % TODO: DATE
-\date{2017}
+\date{2021}
 
 % TODO: Można zakomentować jeśli nie chcemy wyświetlać katedry
 % TODO: Nie jest pewne, czy to jest gdzieś wykorzystywane
@@ -273,17 +272,17 @@
     {\bf\huge\textsf{Praca inżynierska}}\\
     \vspace{13ex}
     % --------------------------- IMIE I NAZWISKO -------------------------------
-    {\bf\LARGE\textsf{TODO: Imię nazwisko strona tytułowa}}\\
+    {\bf\LARGE\textsf{Karol Kocierz}}\\
     \vspace{3ex}
-    {\sf \normalsize kierunek studiów:} {\bf\normalsize\textsf{TODO: kierunek strona tytułowa}}\\
+    {\sf \normalsize kierunek studiów:} {\bf\normalsize\textsf{Informatyka Stosowana}}\\
     \vspace{15ex}
     %% ------------------------ TYTUL PRACY --------------------------------------
-    {\bf\Huge\textsf{TODO: Tytuł na okładce}}\\
+    {\bf\Huge\textsf{Przewidywanie przestępstw na podstawie danych historycznych i aktualnych}}\\
     \vspace{14ex}
     %% ------------------------ OPIEKUN PRACY ------------------------------------
-    {\sf \LARGE Opiekun:} {\bf\LARGE\textsf{TODO: opiekun na stronie tytułowej}}\\
+    {\sf \LARGE Opiekun:} {\bf\LARGE\textsf{Dr. Piotr Kowalski}}\\
     \vspace{22ex}
-    \textsf{\bf\Large\textsf{TODO: miejsce, data np.: Kraków, jakiśmiesiąc 2017}}
+    \textsf{\bf\Large\textsf{Kraków, Styczeń 2021}}
 \end{center}
 %% =====  STRONA TYTUŁOWA PRACY INŻYNIERSKIEJ  ====
 
@@ -294,15 +293,15 @@
 
 \vspace{14ex}
 
-%\begin{center}
-%    \begin{tabular}{lr}
-%        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &
-%        ................................................................. \\
-%        ~ & {\sf (czytelny podpis)} \\
-%    \end{tabular}
-%\end{center}
+\begin{center}
+    \begin{tabular}{lr}
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &
+        ................................................................. \\
+        ~ & {\sf (czytelny podpis)} \\
+    \end{tabular}
+\end{center}
 
-%% =====  TYL STRONY TYTULOWEJ PRACY INŻYNIERSKIEJ  ====
+% =====  TYL STRONY TYTULOWEJ PRACY INŻYNIERSKIEJ  ====
 \newpage
 %\titlepages
 
@@ -320,10 +319,9 @@
 \tableofcontents
 \clearpage
 
-\include{intro}
-\include{theory}
-\include{main}
-\include{summary}
+\include{wstep}
+\include{metodyki_badan}
+\include{opis_danych}
 
 \printbibliography
 
